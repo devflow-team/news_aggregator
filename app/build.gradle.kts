@@ -3,11 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("kotlin-kapt")
-    id("androidx.room")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.androidx.navigation.safeargs)
 }
 
 android {
@@ -43,12 +40,13 @@ android {
     buildFeatures {
         compose = true
     }
-    room {
-        schemaDirectory("$projectDir/schemas")
-    }
 }
 
 dependencies {
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presentation"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -67,21 +65,15 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // xml
-    implementation(libs.xmlutil.core)
-    implementation(libs.xmlutil.serialization)
+//    implementation(libs.xmlutil.core)
+//    implementation(libs.xmlutil.serialization)
 
     // retrofit
     implementation(libs.retrofit2)
-    implementation(libs.retrofit2.kotlinx.serialization.converter)
+//    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     // coil
-    implementation(libs.coil)
-
-    // room
-    implementation(libs.androidx.room.runtime)
-    annotationProcessor(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
+//    implementation(libs.coil)
 
     // hilt
     implementation(libs.hilt.android)
@@ -92,9 +84,6 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     // coroutine
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-
-    // recycler
-    implementation(libs.androidx.recyclerview)
+//    implementation(libs.kotlinx.coroutines.core)
+//    implementation(libs.kotlinx.coroutines.android)
 }

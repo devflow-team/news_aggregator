@@ -1,11 +1,10 @@
-package com.example.newsaggregator.data.rss.dto
+package com.devflowteam.data.remote.rss.dto
 
-import kotlinx.serialization.Polymorphic
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 import nl.adaptivity.xmlutil.serialization.XmlSerialName
 
-
+/*
 class Rss<CHANNEL> private constructor(
     private val body: Body<CHANNEL>
 ) {
@@ -17,6 +16,7 @@ class Rss<CHANNEL> private constructor(
     private data class Body<CHANNEL>(@Polymorphic val data: CHANNEL)
 
 }
+ */
 
 
 @Serializable
