@@ -65,12 +65,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // xml
-//    implementation(libs.xmlutil.core)
-//    implementation(libs.xmlutil.serialization)
+    implementation(libs.xmlutil.core)
+    implementation(libs.xmlutil.serialization)
 
     // retrofit
     implementation(libs.retrofit2)
-//    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     // coil
 //    implementation(libs.coil)
@@ -86,4 +86,8 @@ dependencies {
     // coroutine
 //    implementation(libs.kotlinx.coroutines.core)
 //    implementation(libs.kotlinx.coroutines.android)
+
+
+    // room
+    implementation(libs.androidx.room.ktx)
 }

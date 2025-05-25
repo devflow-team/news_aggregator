@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     id("androidx.room")
+    id("kotlin-kapt")
 }
 
 android {
@@ -40,6 +41,17 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+
+    implementation(project(":domain"))
+
+    // hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // moshi
+    implementation("com.squareup.moshi:moshi:1.15.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
 
     // xml
     implementation(libs.xmlutil.core)
